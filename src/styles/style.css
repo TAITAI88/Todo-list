@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  justify-content: center;
+}
+
+.todo {
+  width: 30%;
+  height: 700px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3%;
+  padding: 2%;
+  position: relative;
+  background: linear-gradient(to bottom, rgb(220, 236, 255), rgb(235, 234, 255));
+}
+.todo .title {
+  width: 100%;
+  margin-top: 50px;
+  color: rgb(62, 118, 182);
+}
+.todo span {
+  width: 100%;
+  color: rgb(56, 97, 145);
+  margin-left: 2%;
+}
+.todo span::after {
+  content: "";
+  width: 88%;
+  height: 1px;
+  position: absolute;
+  top: 20%;
+  left: 6%;
+  background: rgba(36, 36, 36, 0.6352941176);
+}
+.todo .input_desc {
+  width: 90%;
+  position: relative;
+  top: 13%;
+  font-size: 22px;
+  color: rgb(56, 97, 145);
+}
+
+.input {
+  width: 90%;
+  height: 60px;
+  display: flex;
+  position: relative;
+  top: 13%;
+}
+.input input {
+  width: 85%;
+  height: 100%;
+  box-sizing: border-box;
+  margin-right: 1px;
+}
+.input button {
+  width: 15%;
+  height: 100%;
+  background-color: rgb(77, 100, 202);
+}
+
+.itemList {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  top: 5%;
+}/*# sourceMappingURL=style.css.map */
