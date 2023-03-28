@@ -1,7 +1,7 @@
 import React from "react";
 
-const itemList = () => {
-  return <div className="itemList">123</div>;
+const ItemList = (props) => {
+  return <div className="itemList">{props.children}</div>;
 };
 
-export default itemList;
+export default ItemList;

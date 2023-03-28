@@ -1,17 +1,34 @@
-import React from "react";
-import Input from "./input";
-import ItemList from "./itemList";
+import React, { useState } from "react";
+import InputBar from "./InputBar";
+import ScrollView from "./ScrollView";
+import ProgressBar from "./ProgressBar";
+import ItemList from "./ItemList";
+import Item from "./Item";
 
-const todo_list = () => {
+const TodoList = () => {
+  const [list, setList] = useState("");
+
+  const addItem = (value) => {
+    const newArray = [...list, value];
+    setList(newArray);
+  };
+
   return (
-    <div className="todo">
+    <div className="todoList">
       <h1 className="title">Todo List</h1>
-      <span>Add things to do</span>
-      <ItemList />
-      <p className="input_desc">Add to list</p>
-      <Input />
+      <ProgressBar />
+
+      {/* 先用 Array.from 將 list 轉成陣列 */}
+      <ScrollView>
+        <ItemList>
+          {Array.from(list).map((item, index) => {
+            return <Item item={item} key={index} />;
+          })}
+        </ItemList>
+      </ScrollView>
+      <InputBar addItem={addItem} />
     </div>
   );
 };
 
-export default todo_list;
+export default TodoList;

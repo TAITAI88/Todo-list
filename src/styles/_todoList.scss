@@ -1,6 +1,6 @@
-.todo {
-  width: 30%;
-  height: 700px;
+.todoList {
+  width: 500px;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -14,25 +14,32 @@
   );
   .title {
     width: 100%;
-    margin-top: 50px;
+    height: 60px;
+    margin-top: 40px;
+    margin-bottom: 10px;
     color: rgb(62, 118, 182);
-  }
-  span {
-    width: 100%;
-    color: rgb(56, 97, 145);
-    margin-left: 2%;
+    position: relative;
+    &::before {
+      content: "Add things to do";
+      color: rgb(56, 97, 145);
+      position: absolute;
+      padding-bottom: 1%;
+      font-size: 14px;
+      bottom: -3%;
+      left: 1%;
+    }
     &::after {
       content: "";
-      width: 88%;
-      height: 1px;
+      width: 100%;
       position: absolute;
-      top: 20%;
-      left: 6%;
-      background: #242424a2;
+      bottom: -10%;
+      left: 0;
+      border-bottom: 1px solid rgb(56, 97, 145);
     }
   }
+
   .input_desc {
-    width: 90%;
+    width: 100%;
     position: relative;
     top: 13%;
     font-size: 22px;
