@@ -6,7 +6,39 @@
   padding: 1%;
   display: flex;
   justify-content: center;
+  position: relative;
   background-color: rgb(255, 255, 255);
   border-left: 5px solid rgb(51, 103, 172);
   border-radius: 5px;
+  .content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .delBtn {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 5%;
+    top: 38%;
+    border: none;
+    clip-path: polygon(
+      20% 0%,
+      0% 20%,
+      30% 50%,
+      0% 80%,
+      20% 100%,
+      50% 70%,
+      80% 100%,
+      100% 80%,
+      70% 50%,
+      100% 20%,
+      80% 0%,
+      50% 30%
+    );
+    background-color: rgb(90, 145, 216);
+    &:hover {
+      transform: scale(0.9);
+    }
+  }
 }

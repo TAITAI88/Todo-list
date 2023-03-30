@@ -1,0 +1,18 @@
+.itemList {
+  width: 95%;
+  height: 300px;
+  position: relative;
+  top: 5%;
+  left: 2.5%;
+  margin-bottom: 200px;
+  padding-right: 5%;
+  &::after {
+    content: "";
+    width: 89%;
+    border-bottom: 1px solid rgb(62, 118, 182);
+    position: absolute;
+    font-size: 14px;
+    bottom: -10%;
+    left: 2%;
+  }
+}
