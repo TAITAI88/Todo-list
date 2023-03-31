@@ -1,26 +1,33 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-const InputBar = ({ list, setList, setPercent, isChecked, percent }) => {
+const InputBar = ({
+  list,
+  setList,
+  setPercent,
+  countChecked,
+  percent,
+  totalItem,
+  setTotalItem,
+  calcParcent,
+}) => {
   const [value, setValue] = useState("");
 
-  //紀錄我們在Input_bar裡輸入的value
+  //紀錄我們在 Input_bar 裡輸入的 value
   const changeHandler = (e) => {
     setValue(e.target.value);
   };
 
   const addHandler = () => {
+    //let 宣告一個 newItem 的物件，裡面放一個名為 content 的屬性，賦予其值為剛剛紀錄的 value
     let newItem = {
       content: value,
     };
-
+    //let 宣告一個 updateList 用來裝現有的 list ，並將新加入的 newItem 推進 updateList 裡 ， 再透過 SetList 傳回 list 裡
     let updateList = [...list];
     updateList.push(newItem);
     console.log(updateList);
     setList(updateList);
-    setPercent(Math.round((isChecked / updateList.length) * 100));
-    console.log(updateList.length);
-    console.log(isChecked);
-    console.log(percent);
+    setTotalItem(updateList.length);
   };
 
   //將Input裡的value儲存，並在儲存後將Value變回空字串
@@ -28,6 +35,13 @@ const InputBar = ({ list, setList, setPercent, isChecked, percent }) => {
     value === "" ? alert("請輸入內容") : addHandler(value);
     setValue("");
   };
+
+  useEffect(() => {
+    console.log("totalItem數量:" + totalItem);
+    console.log("Checked數量:" + countChecked);
+    setPercent(Math.round((countChecked / totalItem) * 100));
+    console.log("百分比" + percent);
+  }, [countChecked, totalItem, percent]);
 
   return (
     <div className="inputBar">

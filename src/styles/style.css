@@ -53,7 +53,7 @@
   margin-bottom: 2%;
   padding: 1%;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   background-color: rgb(255, 255, 255);
   border-left: 5px solid rgb(51, 103, 172);
@@ -65,9 +65,13 @@
   margin-left: 2%;
 }
 .todoList .item .content {
-  width: 100%;
+  width: auto;
   display: flex;
   align-items: center;
+  font-size: 24px;
+  position: relative;
+  color: rgb(51, 103, 172);
+  text-decoration: none;
 }
 .todoList .item .delBtn {
   width: 15px;
