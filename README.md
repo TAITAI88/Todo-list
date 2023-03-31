@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Github.io
+## Github.io(直接開啟)
 url: (https://taitai88.github.io/todo-list/).
 
 ## Available Scripts
