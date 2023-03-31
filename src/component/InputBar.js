@@ -8,7 +8,6 @@ const InputBar = ({
   percent,
   totalItem,
   setTotalItem,
-  calcParcent,
 }) => {
   const [value, setValue] = useState("");
 
@@ -22,7 +21,7 @@ const InputBar = ({
     let newItem = {
       content: value,
     };
-    //let 宣告一個 updateList 用來裝現有的 list ，並將新加入的 newItem 推進 updateList 裡 ， 再透過 SetList 傳回 list 裡
+    //let 宣告一個 updateList 用來裝現有的 list ，並將新加入的 newItem 推進 updateList 裡 ， 再透過 SetList 更新 list 裡的 Item
     let updateList = [...list];
     updateList.push(newItem);
     console.log(updateList);
@@ -36,6 +35,7 @@ const InputBar = ({
     setValue("");
   };
 
+  //用 useEffect 將更新完的 state(totalItem,countChecked) 在裡面做百分比的計算 ， 並用 setPercent 將 percent 的值更新
   useEffect(() => {
     console.log("totalItem數量:" + totalItem);
     console.log("Checked數量:" + countChecked);
