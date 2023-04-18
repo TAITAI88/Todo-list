@@ -5,7 +5,6 @@ const InputBar = ({
   setList,
   setPercent,
   countChecked,
-  percent,
   totalItem,
   setTotalItem,
 }) => {
@@ -16,32 +15,31 @@ const InputBar = ({
     setValue(e.target.value);
   };
 
-  const addHandler = () => {
-    //let 宣告一個 newItem 的物件，裡面放一個名為 content 的屬性，賦予其值為剛剛紀錄的 value
-    let newItem = {
-      content: value,
-    };
-    //let 宣告一個 updateList 用來裝現有的 list ，並將新加入的 newItem 推進 updateList 裡 ， 再透過 SetList 更新 list 裡的 Item
-    let updateList = [...list];
-    updateList.push(newItem);
-    console.log(updateList);
-    setList(updateList);
-    setTotalItem(updateList.length);
-  };
-
   //將Input裡的value儲存，並在儲存後將Value變回空字串
   const saveHandler = () => {
     value === "" ? alert("請輸入內容") : addHandler(value);
     setValue("");
   };
 
+  const addHandler = () => {
+    //let 宣告一個 newItem 的物件，並將 content 設為剛剛紀錄的 value， id 設為現在時間， checked 為 false
+    let newItem = {
+      content: value,
+      id: `${Date.now()}`,
+      checked: false,
+    };
+    //let 宣告一個 updateList 用來裝現有的 list ，並將新加入的 newItem 推進 updateList 裡 ， 再透過 SetList 更新 list 裡的 Item，並計算Item總個數。
+    let updateList = [...list];
+    updateList.push(newItem);
+    setList(updateList);
+    setTotalItem(updateList.length);
+    console.log(updateList);
+  };
+
   //用 useEffect 將更新完的 state(totalItem,countChecked) 在裡面做百分比的計算 ， 並用 setPercent 將 percent 的值更新
   useEffect(() => {
-    console.log("totalItem數量:" + totalItem);
-    console.log("Checked數量:" + countChecked);
     setPercent(Math.round((countChecked / totalItem) * 100));
-    console.log("百分比" + percent);
-  }, [countChecked, totalItem, percent]);
+  }, [countChecked, totalItem, setPercent]);
 
   return (
     <div className="inputBar">

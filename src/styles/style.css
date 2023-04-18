@@ -50,11 +50,11 @@
   width: 100%;
   height: 65px;
   box-sizing: border-box;
-  margin-bottom: 2%;
-  padding: 1%;
+  position: relative;
   display: flex;
   justify-content: flex-start;
-  position: relative;
+  margin-bottom: 2%;
+  padding: 1%;
   background-color: rgb(255, 255, 255);
   border-left: 5px solid rgb(51, 103, 172);
   border-radius: 5px;
@@ -137,29 +137,6 @@
   color: rgb(56, 97, 145);
 }
 
-.scrollView {
-  width: 100%;
-  height: 300px;
-  overflow: auto;
-  position: relative;
-  left: 2.5%;
-  overflow: auto;
-  padding-right: 6%;
-  box-sizing: border-box;
-}
-.scrollView::-webkit-scrollbar-track {
-  border-radius: 10px;
-  background: linear-gradient(to bottom, rgb(220, 236, 255), rgb(235, 234, 255));
-}
-.scrollView::-webkit-scrollbar {
-  width: 7px;
-  background-color: rgba(0, 0, 0, 0);
-}
-.scrollView::-webkit-scrollbar-thumb {
-  border-radius: 10px;
-  background-color: rgb(150, 178, 238);
-}
-
 .progressBar {
   width: 90%;
   padding-top: 5%;
@@ -170,18 +147,23 @@
 .itemList {
   width: 95%;
   height: 300px;
+  overflow: auto;
   position: relative;
   top: 5%;
   left: 2.5%;
   margin-bottom: 200px;
   padding-right: 5%;
+  box-sizing: border-box;
 }
-.itemList::after {
-  content: "";
-  width: 89%;
-  border-bottom: 1px solid rgb(62, 118, 182);
-  position: absolute;
-  font-size: 14px;
-  bottom: -10%;
-  left: 2%;
+.itemList::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: linear-gradient(to bottom, rgb(220, 236, 255), rgb(235, 234, 255));
+}
+.itemList::-webkit-scrollbar {
+  width: 7px;
+  background-color: rgba(0, 0, 0, 0);
+}
+.itemList::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: rgb(150, 178, 238);
 }/*# sourceMappingURL=style.css.map */
